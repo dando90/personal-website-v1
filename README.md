@@ -2,7 +2,7 @@
 
 This repository contains the source code for the first version of my personal website. It was a static portfolio site introducing me and bringing together information about my background, skills, and contact details.
 
-This version of the website is no longer online. The repository is kept as an archive of the original site.
+This version is preserved as an archived project and remains available at <https://www.stefanochiabrando.com/projects/personal-website-v1/>. The repository contains the original source code for this version.
 
 ## Pages
 
