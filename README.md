@@ -1,16 +1,70 @@
-# Repository containing my website's and my projects' source code 
-### I'll put all my sorce code in this repository
-#### https://github.com/dando90/dando90.github.io
-### My project examples have been deployed in my website
-#### https://www.stefanochiabrando.com/portfolio/
+# Personal Website — Version 1
 
-## MY WEB PROJECTS
-***
-### Counter Javascript
-#### Source code: https://github.com/dando90/dando90.github.io/tree/main/portfolio/javascript_basics
-#### Working Example: https://www.stefanochiabrando.com/portfolio/counter/
-### PHP API Rest
-#### Source code: https://github.com/dando90/dando90.github.io/tree/main/portfolio/apirest/
-### Book Finder - Javascript Advanced
-#### Source code: https://github.com/dando90/dando90.github.io/tree/main/portfolio/bookfinder/
-#### Working Example: https://www.stefanochiabrando.com/portfolio/bookfinder/
+This repository contains the source code for the first version of my personal website. It was a static portfolio site introducing me and bringing together information about my background, skills, and contact details.
+
+This version of the website is no longer online. The repository is kept as an archive of the original site.
+
+## Pages
+
+- **Home** — introduction and personal profile
+- **About** — background and biography
+- **Skills** — skills overview
+- **Portfolio** — portfolio page from this version of the site
+- **Contact** — contact and social links
+
+## Technologies
+
+- **HTML5** for page structure and content
+- **CSS3** for layout, responsive styling, and presentation
+- **Sass (SCSS)** for the stylesheet source files in `assets/sass/`
+- **JavaScript** for the rotating introduction text on the home page
+- **SVG** for interface icons and some illustrations
+- **Web fonts** served locally from `assets/font/`
+
+The compiled stylesheets are already included in `assets/css/`, so Sass or any other build tool is not required to run the site.
+
+## Run locally
+
+You can serve the files with any static web server. A server is recommended because the site uses root-relative paths such as `/assets/...`.
+
+### Node.js
+
+If you have Node.js installed, you can use `npx` to start a static server:
+
+```bash
+npx serve .
+```
+
+Open the local URL printed in the terminal.
+
+## Repository structure
+
+```text
+.
+├── index.html              # Home page
+├── about/index.html        # About page
+├── skills/index.html       # Skills page
+├── portfolio/index.html    # Portfolio page
+├── contact/index.html      # Contact page
+└── assets/
+    ├── css/                # Compiled stylesheets
+    ├── font/               # Locally hosted web fonts
+    ├── img/                # Images, icons, and illustrations
+    └── sass/               # SCSS source files
+```
+
+## Compile Sass to CSS
+
+The editable Sass sources are in `assets/sass/`, while the HTML pages load the compiled files in `assets/css/`. To rebuild the stylesheets, install Sass if needed and run the following from the repository root:
+
+```bash
+npx sass --style=compressed --no-source-map \
+  assets/sass/style.scss:assets/css/style.min.css \
+  assets/sass/home.scss:assets/css/home.min.css \
+  assets/sass/about.scss:assets/css/about.min.css \
+  assets/sass/skills.scss:assets/css/skills.min.css \
+  assets/sass/portfolio.scss:assets/css/portfolio.min.css \
+  assets/sass/contact.scss:assets/css/contact.min.css
+```
+
+If Sass is not already available, `npx` will offer to download it for this run. Alternatively, install it globally with `npm install --global sass` and replace `npx sass` with `sass` in the command. The `_config.scss` file contains shared Sass configuration and is imported by the page stylesheets; it is not compiled on its own.
